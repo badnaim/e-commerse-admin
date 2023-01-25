@@ -1,0 +1,113 @@
+.fullScreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 53, 133, 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.container {
+  width: 510px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
+}
+
+.container input {
+  height: 40px;
+  width: 355px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: white;
+}
+
+#sameImg {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+#oddImg {
+  position: absolute;
+  margin-top: 10px;
+  right: 400px;
+}
+
+.firstLineOfBox {
+  display: flex;
+  width: 420px;
+  height: 50px;
+  justify-content: space-between;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+#password {
+  background-image: url(../../public/view.png);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+}
+
+#blueButton {
+  width: 435px;
+  height: 40px;
+  background-color: #003585;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#blueButton:hover {
+  background-color: #0a4cae;
+  cursor: pointer;
+}
+
+#greenButton {
+  width: 435px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #a7f65c;
+  background-color: white;
+  color: #003585;
+}
+
+#greenButton:hover {
+  border: 1px solid #a7f65c;
+  background-color: #a7f65c;
+  color: white;
+  cursor: pointer;
+}
+
+#line {
+  width: 435px;
+  border-top: 1px solid rgb(223, 223, 223);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#abs {
+  width: 60px;
+  top: 2240px;
+  color: rgb(223, 223, 223);
+  position: absolute;
+  background-color: white;
+}
+
+#forgottenPass {
+  margin-top: 0;
+  margin-bottom: 25px;
+  margin-left: 265px;
+  font-size: 15px;
+  color: #afadb5;
+  border-bottom: 1px solid #afadb5;
+}

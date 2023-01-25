@@ -1,0 +1,17 @@
+.sideMenuIn {
+  /* width: 200px; */
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sideMenu {
+width: 20%;
+display: flex;
+justify-content: center;
+}
+
+.sideMenuIn button{
+  width: 150px;
+}
