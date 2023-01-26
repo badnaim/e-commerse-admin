@@ -4,14 +4,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  top: 150px;
 }
 
 .sideMenu {
-width: 20%;
-display: flex;
-justify-content: center;
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 
-.sideMenuIn button{
+.sideMenuIn button {
   width: 150px;
 }

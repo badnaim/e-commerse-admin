@@ -1,3 +1,11 @@
 .mainDisplay {
   display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.mainDisplayIn {
+  margin-left: 50px;
+  width: 70%;
+  display: flex;
 }

@@ -1,0 +1,23 @@
+.productOfAdmin img {
+  width: 300px;
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* justify-content: space-between; */
+  gap: 50px;
+}
+
+#line {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+#box img {
+  width: 100px;
+  height: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

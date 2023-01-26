@@ -1,5 +1,35 @@
 import React from "react";
+import Product from "../components/Product";
+// import { useNavigate } from "react-router-dom";
+import "../styles/main.css";
 
-export default function Main() {
-  return <div className="grayBck"></div>;
+export default function Main(prop) {
+  // const [information, setInformation] = useState(data);
+  const { myData } = prop;
+
+  return (
+    <div
+      // onClick={() => {
+      //   navigate(`../product/${data.id}`);
+      // }}
+      className="grayBck"
+    >
+      <div className="whiteSec">
+        <div>
+          <div></div>
+          <div id="categ">
+            <div>Зураг</div>
+            <div>Барааны нэр</div>
+            <div>Үнэ</div>
+            <div>Үлдэгдэл</div>
+            <div>Хямдрал%</div>
+            <div>Категори</div>
+          </div>
+        </div>
+        {myData.map((prod) => (
+          <Product detail={prod} key={prod.index} />
+        ))}
+      </div>
+    </div>
+  );
 }
