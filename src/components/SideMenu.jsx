@@ -8,7 +8,6 @@ export default function SideMenu() {
     <div className="sideMenu">
       <div className="sideMenuIn">
         <button onClick={() => navigate("/")}>Хянах самбар</button>
-        <button onClick={() => navigate("/products")}>Бүтээгдэхүүнүүд</button>
         <button onClick={() => navigate("/orders")}>Захиалгууд</button>
         <button onClick={() => navigate("/users")}>Хэрэглэгчид</button>
         <button onClick={() => navigate("/moderator")}>Модератор</button>

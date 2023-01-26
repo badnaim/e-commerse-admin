@@ -17,7 +17,6 @@ function App() {
   const [data, setData] = useState();
   useEffect(() => {
     axios.get("http://localhost:2020/products").then((res) => {
-      console.log(res);
       setData(res.data);
     });
   }, []);
@@ -29,8 +28,7 @@ function App() {
         <div className="mainDisplayIn">
           <SideMenu />
           <Routes>
-            <Route path="/" element={<Main myData={data} />} />
-            {/* <Route path="/products" element={<Main myData={data} />} /> */}
+            {data && <Route path="/" element={<Main myData={data} />} />}
             <Route path="/orders" element={<Orders />} />
             <Route path="/users" element={<Users />} />
             <Route path="/moderator" element={<Moderator />} />

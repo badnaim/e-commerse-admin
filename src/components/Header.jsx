@@ -8,9 +8,6 @@ import { useNavigate } from "react-router-dom";
 export default function Header(props) {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  console.log(search);
-
-  // console.log(props.userName);
 
   return (
     <header>
@@ -35,15 +32,14 @@ export default function Header(props) {
         {props.sign ? (
           <div className="twoButton">
             <div className="signIn">
-            <a href="">
-              <div className="profile">
-                {props.userName}
-                <Img2 />
-              </div>
-            </a>
-            <a href="/">Log out</a>  
+              <a href="">
+                <div className="profile">
+                  {props.userName}
+                  <Img2 />
+                </div>
+              </a>
+              <a href="/">Log out</a>
             </div>
-            
           </div>
         ) : (
           <div className="twoButton">

@@ -4,7 +4,6 @@ import "../styles/product.css";
 export default function Product({ detail }) {
   return (
     <div className="productOfAdmin">
-      {/* <img src={detail.image} alt="product-img" /> */}
       <div id="box">
         <div>
           <img src={detail.image} />

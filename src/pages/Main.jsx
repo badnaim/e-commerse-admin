@@ -6,7 +6,7 @@ import "../styles/main.css";
 export default function Main(prop) {
   // const [information, setInformation] = useState(data);
   const { myData } = prop;
-
+  console.log(myData);
   return (
     <div
       // onClick={() => {
@@ -26,8 +26,8 @@ export default function Main(prop) {
             <div>Категори</div>
           </div>
         </div>
-        {myData.map((prod) => (
-          <Product detail={prod} key={prod.index} />
+        {myData.map((prod, index) => (
+          <Product detail={prod} key={index} />
         ))}
       </div>
     </div>
