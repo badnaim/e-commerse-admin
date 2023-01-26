@@ -6,7 +6,8 @@ import Orders from "./components/subcomps/Orders";
 import Users from "./components/subcomps/Users";
 import Moderator from "./components/subcomps/Moderator";
 import Settings from "./components/subcomps/Settings";
-import Main from "./pages/Main";
+import Products from "./pages/Products";
+import Main from "./components/subcomps/Main";
 // import Login from "./pages/Login";
 // import { users } from "./util/data";
 import { Routes, Route } from "react-router-dom";
@@ -28,7 +29,10 @@ function App() {
         <div className="mainDisplayIn">
           <SideMenu />
           <Routes>
-            {data && <Route path="/" element={<Main myData={data} />} />}
+            <Route path="/" element={<Main />} />
+            {data && (
+              <Route path="/products" element={<Products myData={data} />} />
+            )}
             <Route path="/orders" element={<Orders />} />
             <Route path="/users" element={<Users />} />
             <Route path="/moderator" element={<Moderator />} />

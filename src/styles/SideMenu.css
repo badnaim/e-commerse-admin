@@ -1,11 +1,10 @@
 .sideMenuIn {
-  /* width: 200px; */
-  gap: 50px;
+  gap: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  top: 150px;
+  top: 100px;
 }
 
 .sideMenu {
@@ -15,5 +14,14 @@
 }
 
 .sideMenuIn button {
-  width: 150px;
+  width: 188px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+.sideMenuIn button:hover {
+  background-color: #003585;
+  color: white;
+  cursor: pointer;
 }

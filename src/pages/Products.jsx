@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "../components/Product";
 // import { useNavigate } from "react-router-dom";
-import "../styles/main.css";
+import "../styles/products.css";
 
 export default function Main(prop) {
   // const [information, setInformation] = useState(data);
