@@ -1,5 +1,7 @@
 import React from "react";
+import Img7 from "../images/Img7";
 import "../styles/product.css";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default function Product({ detail }) {
   return (
@@ -22,6 +24,19 @@ export default function Product({ detail }) {
         </div>
         <div>
           <p>{detail.category}</p>
+        </div>
+        <div>
+          <Dropdown>
+            <Dropdown.Toggle id="toggle">
+              <Img7 />
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Өөрчлөх</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Устгах</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Вебсайтаас нуух</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </div>
       <div id="line"></div>

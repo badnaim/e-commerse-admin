@@ -35,7 +35,7 @@ header {
 .searchSec input {
   background-color: rgb(165, 165, 165);
   width: 100%;
-  height: 36px;
+  height: 40px;
   border-right: none;
   border-radius: 20px 0 0 20px;
   border: 1px solid white;
@@ -70,7 +70,7 @@ header {
 
 .signIn a {
   text-decoration: none;
-  color:#003585;
+  color: #003585;
 }
 
 .signIn {

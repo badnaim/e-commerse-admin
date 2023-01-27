@@ -4,8 +4,10 @@
 
 #box {
   display: flex;
+  padding-left: 10px;
+  padding-right: 20px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 50px;
 }
 
@@ -19,4 +21,14 @@
   height: 100px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#toggle {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
 }

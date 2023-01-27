@@ -1,23 +1,90 @@
 .grayBck {
   width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .whiteSec {
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
   width: 90%;
   height: auto;
   background-color: white;
+  /* padding-top: 15px; */
 }
 
 #categ {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
-  background-color: rgb(218, 218, 218);
+  /* margin-top: 20px; */
+  border-radius: 15px 15px 0 0;
+  background-color: rgb(174, 174, 174);
   width: 100%;
   height: 50px;
   align-items: center;
+}
+
+.headingSec {
+  margin-top: 30px;
+  width: 90%;
+}
+
+.headingSec button {
+  display: flex;
+  align-items: center;
+  background-color: #003585;
+  color: white;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+#line {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  margin-top: 20px;
+}
+
+#bOne {
+  width: 152px;
+  height: 38px;
+  gap: 6px;
+}
+#bTwo {
+  width: 248px;
+  height: 42px;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+
+#bTwo span {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.headingTwoSide {
+  /* width: 100%;
+  height: 300px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+#inp input {
+  /* margin-top: 70px; */
+  width: 300px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  color: gray;
+  padding-left: 20px;
+}
+
+#inp {
+  display: flex;
+  align-self: flex-end;
 }
