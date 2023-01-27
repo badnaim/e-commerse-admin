@@ -17,7 +17,7 @@ export default function Main(prop) {
   // const [show, setShow] = useState(false);
 
   // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true); // offcanvas //
   console.log(myData);
   return (
     <div
