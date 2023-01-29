@@ -88,3 +88,24 @@
   display: flex;
   align-self: flex-end;
 }
+
+#canvas {
+  width: 890px;
+}
+
+#lineCanvas {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  /* box-shadow: 0px 5px 30px 4px gray; */
+}
+
+.containerCanvas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.boxCanvas {
+  width: 90%;
+  background-color: aqua;
+}
