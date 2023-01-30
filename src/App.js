@@ -14,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 // import { Button, Stack } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [data, setData] = useState();

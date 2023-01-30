@@ -5,7 +5,7 @@ import Img5 from "../images/Img5";
 import Img6 from "../images/Img6";
 import Img7 from "../images/Img7";
 import Dropdown from "react-bootstrap/Dropdown";
-import AddProd from "../components/AddProd"
+import AddProd from "../components/AddProd";
 // import { useNavigate } from "react-router-dom";
 import "../styles/products.css";
 
@@ -19,14 +19,15 @@ export default function Main(prop) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true); 
+  const handleShow = () => setShow(true);
   // console.log(myData);
   return (
     <div
       // onClick={() => {
       //   navigate(`../product/${data.id}`);
       // }}
-    className="grayBck">
+      className="grayBck"
+    >
       <div className="headingSec">
         <div>Бүтээгдэхүүнүүд</div>
         <div id="line"></div>
@@ -36,31 +37,35 @@ export default function Main(prop) {
               
             </button> */}
 
-      <Button id="bOne" onClick={handleShow} className="me-2">
-        <Img3 />
-        Бараа нэмэх
-      </Button>
-      <Offcanvas id="canvas" placement="end" show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          
-          {/* <Offcanvas.Title></Offcanvas.Title> */}
-        </Offcanvas.Header>
-        <div id="lineCanvas"></div>
-        <Offcanvas.Body>
-          <div className="containerCanvas">
-            <div className="boxCanvas">
-                <AddProd />
-            </div>
-          </div>
-        </Offcanvas.Body>
-      </Offcanvas>
+            <Button id="bOne" onClick={handleShow} className="me-2">
+              <Img3 />
+              Бараа нэмэх
+            </Button>
+            <Offcanvas
+              id="canvas"
+              placement="end"
+              show={show}
+              onHide={handleClose}
+            >
+              <Offcanvas.Header closeButton>
+                {/* <Offcanvas.Title></Offcanvas.Title> */}
+              </Offcanvas.Header>
+              <div id="lineCanvas"></div>
+              <Offcanvas.Body>
+                <div className="containerCanvas">
+                  <div className="boxCanvas">
+                    <AddProd />
+                  </div>
+                </div>
+              </Offcanvas.Body>
+            </Offcanvas>
 
             <Dropdown>
               <Dropdown.Toggle id="toggle">
                 <button id="bTwo">
                   <span>
                     <Img5 />
-                    All
+                    Category
                   </span>
                   <Img6 />
                 </button>
