@@ -4,6 +4,9 @@ import "../styles/product.css";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export default function Product({ detail }) {
+  // function deleteProductHandler(id) {
+  //   axios.delete(`http://localhost:2020/product/${id}`);
+  // }
   return (
     <div className="productOfAdmin">
       <div id="box">
