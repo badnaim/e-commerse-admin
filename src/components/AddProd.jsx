@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../styles/addProd.css";
 
-export default function AddProd() {
+export default function AddProd(prop) { 
   // const url = "http://localhost:2020/products";
   // const [singleProd, setSingleProd] = useState(undefined);
   const [data, setData] = useState({
@@ -17,6 +17,9 @@ export default function AddProd() {
     sale: "",
     category: "",
   });
+
+  // const refresh = () => window.location.reload(true)
+
 
   // useEffect(() => {
   //   axios.get(url).then(res => {
@@ -60,7 +63,7 @@ export default function AddProd() {
   // }
 
   function addProductHandler(product) {
-    axios.post("http://localhost:2020/product/add", product);
+    axios.post("http://localhost:2020/product/add", product)
   }
 
   return (
@@ -153,14 +156,13 @@ export default function AddProd() {
       ></Form.Control>
       <div className="buttonOfAddComp">
         <Button
-          onClick={() => addProductHandler(data)}
-          variant="success"
+          onClick={() => {addProductHandler(data); window.location.reload()}}
           type="submit"
         >
           Submit
         </Button>
 
-        {/* <input onClick={getSingleProdHandler} type="button" value="Delete" /> */}
+        <input type="button" value="Refresh" />
         {/* {singleProd && <p>{singleProd.name}</p>} */}
       </div>
     </div>

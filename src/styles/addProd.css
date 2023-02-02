@@ -25,7 +25,8 @@
 }
 
 .buttonOfAddComp button {
-  width: 80px;
+  width: 300px;
+  background-color: #003585;
   height: 38px;
   border-radius: 6px;
 }

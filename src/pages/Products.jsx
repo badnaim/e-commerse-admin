@@ -15,6 +15,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default function Main(prop) {
   // const [information, setInformation] = useState(data);
+  // const { setRefesh } = prop;
   const { myData } = prop;
   const [show, setShow] = useState(false);
 

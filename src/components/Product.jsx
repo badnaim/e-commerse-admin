@@ -55,12 +55,16 @@ export default function Product({ detail }) {
 
             <Dropdown.Menu>
               <Dropdown.Item onClick={handleShow1}>Өөрчлөх</Dropdown.Item>
-              <Offcanvas placement="bottom" show={show1} onHide={handleClose1}>
+              <Offcanvas id="canvas" placement="end" show={show1} onHide={handleClose1}>
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Offcanvas</Offcanvas.Title>
                 </Offcanvas.Header>
+                <div id="lineCanvas"></div>
                 <Offcanvas.Body>
+                <div className="containerCanvas">
+                  <div className="boxCanvas">
                   <EditSec />
+                  </div>
+                </div>
                 </Offcanvas.Body>
               </Offcanvas>
 
