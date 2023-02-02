@@ -10,9 +10,7 @@ import EditSec from "../components/subcomps/EditSec";
 import axios from "axios";
 
 export default function Product({ detail }) {
-  function deleteProductHandler(id) {
-    axios.delete(`http://localhost:2020/product/${id}`);
-  }
+  // const [refresh, setRefresh] = useState();
 
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
@@ -55,16 +53,20 @@ export default function Product({ detail }) {
 
             <Dropdown.Menu>
               <Dropdown.Item onClick={handleShow1}>Өөрчлөх</Dropdown.Item>
-              <Offcanvas id="canvas" placement="end" show={show1} onHide={handleClose1}>
-                <Offcanvas.Header closeButton>
-                </Offcanvas.Header>
+              <Offcanvas
+                id="canvas"
+                placement="end"
+                show={show1}
+                onHide={handleClose1}
+              >
+                <Offcanvas.Header closeButton></Offcanvas.Header>
                 <div id="lineCanvas"></div>
                 <Offcanvas.Body>
-                <div className="containerCanvas">
-                  <div className="boxCanvas">
-                  <EditSec />
+                  <div className="containerCanvas">
+                    <div className="boxCanvas">
+                      <EditSec detail={detail} />
+                    </div>
                   </div>
-                </div>
                 </Offcanvas.Body>
               </Offcanvas>
 
