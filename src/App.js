@@ -17,12 +17,13 @@ import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [refresh, setRefresh] = useState(false);
   const [data, setData] = useState();
   useEffect(() => {
     axios.get("http://localhost:2020/products").then((res) => {
       setData(res.data);
     });
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="App">
@@ -33,7 +34,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             {data && (
-              <Route path="/products" element={<Products myData={data} />} />
+              <Route
+                path="/products"
+                element={
+                  <Products
+                    refresh={refresh}
+                    setRefresh={setRefresh}
+                    myData={data}
+                  />
+                }
+              />
             )}
             <Route path="/orders" element={<Orders />} />
             <Route path="/users" element={<Users />} />

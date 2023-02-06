@@ -14,8 +14,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default function Main(prop) {
-  // const [information, setInformation] = useState(data);
-  // const { setRefesh } = prop;
+  const {refresh, setRefresh} = prop;
   const { myData } = prop;
   const [show, setShow] = useState(false);
 
@@ -108,7 +107,7 @@ export default function Main(prop) {
           </div>
         </div>
         {myData.map((prod, index) => (
-          <Product detail={prod} key={index} />
+          <Product refresh={refresh} setRefresh={setRefresh} detail={prod} key={index} />
         ))}
       </div>
     </div>

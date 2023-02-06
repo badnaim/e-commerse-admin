@@ -9,8 +9,8 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import EditSec from "../components/subcomps/EditSec";
 import axios from "axios";
 
-export default function Product({ detail }) {
-  // const [refresh, setRefresh] = useState();
+export default function Product({ detail, refresh, setRefresh }) {
+  // const [refresh, setRefresh] = useState(false);
 
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
@@ -23,6 +23,7 @@ export default function Product({ detail }) {
 
   function deleteProductHandler(id) {
     axios.delete(`http://localhost:2020/products/delete/${id}`);
+    setRefresh(!refresh)
   }
   return (
     <div className="productOfAdmin">
@@ -84,7 +85,7 @@ export default function Product({ detail }) {
                     variant="danger"
                     onClick={() => {
                       deleteProductHandler(detail.id);
-                      console.log(detail.id);
+                      console.log("ustgalaa", detail.id);
                     }}
                   >
                     Delete

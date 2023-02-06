@@ -70,7 +70,7 @@ export default function AddProd(prop) {
       <div id="titleOfCanvas">
         <h4>Барааны зураг</h4>
       </div>
-      {/* <input onChange={} placeholder='image' type="file" name='file'></input> */}
+      
       <Form.Label>Image link</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
@@ -164,8 +164,6 @@ export default function AddProd(prop) {
           Submit
         </Button>
 
-        {/* <input type="button" value="Refresh" /> */}
-        {/* {singleProd && <p>{singleProd.name}</p>} */}
       </div>
     </div>
   );
