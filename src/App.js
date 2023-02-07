@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [refresh, setRefresh] = useState(false);
   const [data, setData] = useState();
+
   useEffect(() => {
     axios.get("http://localhost:2020/products").then((res) => {
       setData(res.data);
@@ -36,13 +37,7 @@ function App() {
             {data && (
               <Route
                 path="/products"
-                element={
-                  <Products
-                    refresh={refresh}
-                    setRefresh={setRefresh}
-                    myData={data}
-                  />
-                }
+                element={<Products setRefresh={setRefresh} myData={data} />}
               />
             )}
             <Route path="/orders" element={<Orders />} />

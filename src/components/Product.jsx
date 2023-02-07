@@ -9,8 +9,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import EditSec from "../components/subcomps/EditSec";
 import axios from "axios";
 
-export default function Product({ detail, refresh, setRefresh }) {
-  // const [refresh, setRefresh] = useState(false);
+export default function Product({ detail, setRefresh }) {
 
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
@@ -23,27 +22,28 @@ export default function Product({ detail, refresh, setRefresh }) {
 
   function deleteProductHandler(id) {
     axios.delete(`http://localhost:2020/products/delete/${id}`);
-    setRefresh(!refresh)
+    setRefresh(previousState => !previousState)
   }
+
   return (
     <div className="productOfAdmin">
       <div id="box">
         <div>
           <img src={detail.image} />
         </div>
-        <div>
+        <div id="detailOne">
           <p>{detail.name}</p>
         </div>
-        <div>
+        <div id="detailTwo">
           <p>${detail.price}</p>
         </div>
-        <div>
+        <div id="detailOne">
           <p>{detail.stock}</p>
         </div>
-        <div>
+        <div id="detailOne">
           <p>{detail.sale}%</p>
         </div>
-        <div>
+        <div id="detailOne">
           <p>{detail.category}</p>
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function Product({ detail, refresh, setRefresh }) {
                 <Offcanvas.Body>
                   <div className="containerCanvas">
                     <div className="boxCanvas">
-                      <EditSec detail={detail} />
+                      <EditSec setRefresh={setRefresh} detail={detail} />
                     </div>
                   </div>
                 </Offcanvas.Body>
@@ -74,7 +74,6 @@ export default function Product({ detail, refresh, setRefresh }) {
               <Dropdown.Item onClick={handleShow}>Устгах</Dropdown.Item>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  {/* <Modal.Title>Modal heading</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>Устгахдаа итгэлтэй байна уу бяач?</Modal.Body>
                 <Modal.Footer>
@@ -97,6 +96,7 @@ export default function Product({ detail, refresh, setRefresh }) {
             </Dropdown.Menu>
           </Dropdown>
         </div>
+
       </div>
       <div id="line"></div>
     </div>

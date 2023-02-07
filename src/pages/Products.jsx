@@ -3,29 +3,25 @@ import Product from "../components/Product";
 import Img3 from "../images/Img3";
 import Img5 from "../images/Img5";
 import Img6 from "../images/Img6";
-import Img7 from "../images/Img7";
 import Dropdown from "react-bootstrap/Dropdown";
 import AddProd from "../components/AddProd";
 // import { useNavigate } from "react-router-dom";
 import "../styles/products.css";
-
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-export default function Main(prop) {
-  const {refresh, setRefresh} = prop;
-  const { myData } = prop;
+export default function Main({ setRefresh, myData }) {
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState('');
+  // console.log(search)
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // console.log(myData);
   return (
     <div
-      // onClick={() => {
-      //   navigate(`../product/${data.id}`);
-      // }}
       className="grayBck"
     >
       <div className="headingSec">
@@ -33,9 +29,6 @@ export default function Main(prop) {
         <div id="line"></div>
         <div className="headingTwoSide">
           <div>
-            {/* <button id="bOne">
-              
-            </button> */}
 
             <Button id="bOne" onClick={handleShow} className="me-2">
               <Img3 />
@@ -48,7 +41,6 @@ export default function Main(prop) {
               onHide={handleClose}
             >
               <Offcanvas.Header closeButton>
-                {/* <Offcanvas.Title></Offcanvas.Title> */}
               </Offcanvas.Header>
               <div id="lineCanvas"></div>
               <Offcanvas.Body>
@@ -88,7 +80,7 @@ export default function Main(prop) {
             </Dropdown>
           </div>
           <div id="inp">
-            <input placeholder="Хайх" />
+            <input placeholder="Хайх" onChange={(e) => setSearch(e.target.value)} />
           </div>
         </div>
       </div>
@@ -100,14 +92,15 @@ export default function Main(prop) {
             <div>Үнэ</div>
             <div>Үлдэгдэл</div>
             <div>Хямдрал%</div>
-            <div>Категори</div>
-            <div>
-              <Img7 />
-            </div>
+            <div id="cat1">Категори</div>
           </div>
         </div>
-        {myData.map((prod, index) => (
-          <Product refresh={refresh} setRefresh={setRefresh} detail={prod} key={index} />
+        {myData.filter((item) => {
+          return search.toLowerCase() === ''
+            ? item
+            : item.name.toLowerCase().includes(search)
+        }).map((prod, index) => (
+          <Product setRefresh={setRefresh} detail={prod} key={index} />
         ))}
       </div>
     </div>

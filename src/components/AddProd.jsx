@@ -18,8 +18,6 @@ export default function AddProd(prop) {
     category: "",
   });
 
-  // const refresh = () => window.location.reload(true)
-
   // useEffect(() => {
   //   axios.get(url).then(res => {
   //     console.log("getting from ::::", res.data)
@@ -94,8 +92,8 @@ export default function AddProd(prop) {
         name="category"
         id="category"
         value={data.category}
-        placeholder="category"
       >
+        <option disabled={true} value="" >category</option>
         <option>appliances</option>
         <option>computers & tablets</option>
         <option>pad</option>
