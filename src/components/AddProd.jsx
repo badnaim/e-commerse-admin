@@ -50,15 +50,6 @@ export default function AddProd(prop) {
     // console.log(newData);
   }
 
-  // function getSingleProdHandler() {
-  //   fetch("http://localhost:2020/products")
-  //     .then((res) => res.json())
-  //     .then((res) => setSingleProd(res))
-  //     .catch((err) => {
-  //       console.log("Error: ", err.message);
-  //     });
-  // }
-
   function addProductHandler(product) {
     axios.post("http://localhost:2020/product/add", product);
   }
@@ -68,7 +59,7 @@ export default function AddProd(prop) {
       <div id="titleOfCanvas">
         <h4>Барааны зураг</h4>
       </div>
-      
+
       <Form.Label>Image link</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
