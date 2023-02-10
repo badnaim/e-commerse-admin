@@ -19,6 +19,8 @@ export default function Product({ detail, setRefresh }) {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
+  console.log("test");
+
   function deleteProductHandler(id) {
     axios.delete(`http://localhost:2020/products/delete/${id}`).then((res) => {
       if (res.statusText === "OK") {
