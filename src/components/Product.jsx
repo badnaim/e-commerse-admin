@@ -29,7 +29,7 @@ export default function Product({ detail, setRefresh }) {
     <div className="productOfAdmin">
       <div id="box">
         <div>
-          <img src={detail.image} />
+          <img src={detail.image} alt="img" />
         </div>
         <div id="detailOne">
           <p>{detail.name}</p>

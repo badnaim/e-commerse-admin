@@ -54,11 +54,14 @@
   gap: 6px;
 }
 #bTwo {
+  background-color: #003585;
+  border-radius: 8px;
   width: 248px;
   height: 42px;
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
+  align-items: center;
   justify-content: space-between;
 }
 

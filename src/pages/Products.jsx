@@ -54,13 +54,13 @@ export default function Main({ setRefresh, myData }) {
 
             <Dropdown>
               <Dropdown.Toggle id="toggle">
-                <button id="bTwo">
+                <div id="bTwo">
                   <span>
                     <Img5 />
                     Category
                   </span>
                   <Img6 />
-                </button>
+                </div>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

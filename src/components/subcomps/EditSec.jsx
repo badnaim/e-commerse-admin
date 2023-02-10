@@ -25,8 +25,9 @@ export default function EditSec({ detail, setRefresh }) {
       console.log(error)
     } finally {
       console.log("edited")
+      // setRefresh(previousState => !previousState)
+
     }
-    setRefresh(previousState => !previousState)
   };
 
   return (
@@ -41,8 +42,8 @@ export default function EditSec({ detail, setRefresh }) {
         id="image"
         placeholder="image"
         type="text"
-        value={product.img}
-        onChange={(e) => setProduct({ ...product, img: e.target.value })}
+        value={product.image}
+        onChange={(e) => setProduct({ ...product, image: e.target.value })}
       ></Form.Control>
       <Form.Label>Name</Form.Label>
       <Form.Control
@@ -118,8 +119,9 @@ export default function EditSec({ detail, setRefresh }) {
       ></Form.Control>
       <div className="buttonOfAddComp">
         <Button
-          onClick={() => { uptadeProduct(detail.id) }}
-          type="submit">Change</Button>
+          onClick={() => { uptadeProduct(detail.id); window.location.reload(); }}
+          type="submit">Change
+        </Button>
         {/* <input type="button" value="Refresh" /> */}
         {/* {singleProd && <p>{singleProd.name}</p>} */}
       </div>
