@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.sideMenuIn button:focus {
+/* .sideMenuIn button:focus {
   background-color: #003585;
   color: white;
-}
+} */

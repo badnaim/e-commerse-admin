@@ -15,10 +15,12 @@ import axios from "axios";
 import { useEffect } from "react";
 // import { Button, Stack } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { prodContext } from "./layout/prodContext";
 
 function App() {
   const [refresh, setRefresh] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+
   useEffect(() => {
     axios.get("http://localhost:2020/products").then((res) => {
       setData(res.data);
@@ -33,19 +35,21 @@ function App() {
       <div className="mainDisplay">
         <div className="mainDisplayIn">
           <SideMenu />
-          <Routes>
-            <Route path="/" element={<Main />} />
-            {data && (
+          <prodContext.Provider value={{ data, setData }}>
+            <Routes>
+              <Route path="/" element={<Main />} />
+              {/* {data && ( */}
               <Route
                 path="/products"
                 element={<Products setRefresh={setRefresh} myData={data} />}
               />
-            )}
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/moderator" element={<Moderator />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
+              {/* )} */}
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/users" element={<Users />} />
+              <Route path="/moderator" element={<Moderator />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </prodContext.Provider>
         </div>
       </div>
     </div>
