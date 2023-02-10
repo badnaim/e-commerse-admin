@@ -10,7 +10,6 @@ import EditSec from "../components/subcomps/EditSec";
 import axios from "axios";
 
 export default function Product({ detail, setRefresh }) {
-
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
 
@@ -21,8 +20,17 @@ export default function Product({ detail, setRefresh }) {
   const handleShow1 = () => setShow1(true);
 
   function deleteProductHandler(id) {
-    axios.delete(`http://localhost:2020/products/delete/${id}`);
-    setRefresh(previousState => !previousState)
+    axios.delete(`http://localhost:2020/products/delete/${id}`).then((res) => {
+      if (res.statusText === "OK") {
+        setRefresh((prevState) => {
+          return !prevState;
+        });
+        setShow((prevState) => {
+          return !prevState;
+        });
+      }
+    });
+    // setRefresh((previousState) => !previousState);
   }
 
   return (
@@ -73,8 +81,7 @@ export default function Product({ detail, setRefresh }) {
 
               <Dropdown.Item onClick={handleShow}>Устгах</Dropdown.Item>
               <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                </Modal.Header>
+                <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>Устгахдаа итгэлтэй байна уу бяач?</Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={handleClose}>
@@ -96,7 +103,6 @@ export default function Product({ detail, setRefresh }) {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
       </div>
       <div id="line"></div>
     </div>

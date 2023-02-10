@@ -19,11 +19,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [refresh, setRefresh] = useState(false);
   const [data, setData] = useState();
-
   useEffect(() => {
     axios.get("http://localhost:2020/products").then((res) => {
       setData(res.data);
+      console.log(res.data);
     });
+    // console.log(refresh);
   }, [refresh]);
 
   return (

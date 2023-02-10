@@ -13,23 +13,19 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default function Main({ setRefresh, myData }) {
   const [show, setShow] = useState(false);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   // console.log(search)
-
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // console.log(myData);
   return (
-    <div
-      className="grayBck"
-    >
+    <div className="grayBck">
       <div className="headingSec">
         <div>Бүтээгдэхүүнүүд</div>
         <div id="line"></div>
         <div className="headingTwoSide">
           <div>
-
             <Button id="bOne" onClick={handleShow} className="me-2">
               <Img3 />
               Бараа нэмэх
@@ -40,13 +36,12 @@ export default function Main({ setRefresh, myData }) {
               show={show}
               onHide={handleClose}
             >
-              <Offcanvas.Header closeButton>
-              </Offcanvas.Header>
+              <Offcanvas.Header closeButton></Offcanvas.Header>
               <div id="lineCanvas"></div>
               <Offcanvas.Body>
                 <div className="containerCanvas">
                   <div className="boxCanvas">
-                    <AddProd />
+                    <AddProd setRefresh={setRefresh} setShow={setShow} />
                   </div>
                 </div>
               </Offcanvas.Body>
@@ -80,7 +75,10 @@ export default function Main({ setRefresh, myData }) {
             </Dropdown>
           </div>
           <div id="inp">
-            <input placeholder="Хайх" onChange={(e) => setSearch(e.target.value)} />
+            <input
+              placeholder="Хайх"
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -95,13 +93,20 @@ export default function Main({ setRefresh, myData }) {
             <div id="cat1">Категори</div>
           </div>
         </div>
-        {myData.filter((item) => {
-          return search.toLowerCase() === ''
-            ? item
-            : item.name.toLowerCase().includes(search)
-        }).map((prod, index) => (
-          <Product setRefresh={setRefresh} detail={prod} key={index} />
-        ))}
+        {myData
+          .filter((item) => {
+            return search.toLowerCase() === ""
+              ? item
+              : item.name.toLowerCase().includes(search);
+          })
+          .map((prod, index) => (
+            <Product
+              setShow={setShow}
+              setRefresh={setRefresh}
+              detail={prod}
+              key={index}
+            />
+          ))}
       </div>
     </div>
   );

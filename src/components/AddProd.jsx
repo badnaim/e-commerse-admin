@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../styles/addProd.css";
 
-export default function AddProd(prop) {
+export default function AddProd({ setRefresh, setShow }) {
   // const url = "http://localhost:2020/products";
   // const [singleProd, setSingleProd] = useState(undefined);
   const [data, setData] = useState({
@@ -51,7 +51,18 @@ export default function AddProd(prop) {
   }
 
   function addProductHandler(product) {
-    axios.post("http://localhost:2020/product/add", product);
+    axios.post("http://localhost:2020/product/add", product).then((res) => {
+      if (res.statusText === "OK") {
+        setRefresh((prevState) => {
+          // console.log(prevState);
+          return !prevState;
+        });
+        setShow((prevState) => {
+          // console.log(prevState);
+          return !prevState;
+        });
+      }
+    });
   }
 
   return (
@@ -84,7 +95,9 @@ export default function AddProd(prop) {
         id="category"
         value={data.category}
       >
-        <option disabled={true} value="" >category</option>
+        <option disabled={true} value="">
+          category
+        </option>
         <option>appliances</option>
         <option>computers & tablets</option>
         <option>pad</option>
@@ -146,13 +159,11 @@ export default function AddProd(prop) {
         <Button
           onClick={() => {
             addProductHandler(data);
-            window.location.reload();
           }}
           type="submit"
         >
           Submit
         </Button>
-
       </div>
     </div>
   );

@@ -14,21 +14,32 @@ export default function EditSec({ detail, setRefresh }) {
   // const [sale, setSale] = useState("")
   // const [description, setDescription] = useState("")
 
-  const [product, setProduct] = useState(detail)
+  const [product, setProduct] = useState(detail);
+  const [show, setShow] = useState(false);
 
   async function uptadeProduct(id) {
-
     try {
-      const res = await axios.put(`http://localhost:2020/products/edit/${id}`, product)
-      console.log(res)
+      const res = await axios
+        .put(`http://localhost:2020/products/edit/${id}`, product)
+        .then((res) => {
+          setRefresh((prevState) => {
+            return !prevState;
+          });
+          setShow((prevState) => {
+            return !prevState;
+          });
+        });
+      console.log(res);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      console.log("edited")
-      // setRefresh(previousState => !previousState)
-
+      console.log("edited");
+      // setRefresh((previousState) => {
+      //   console.log(previousState);
+      //   return !previousState;
+      // });
     }
-  };
+  }
 
   return (
     <div>
@@ -115,12 +126,19 @@ export default function EditSec({ detail, setRefresh }) {
         id="description"
         placeholder="description"
         type="text"
-        onChange={(e) => setProduct({ ...product, description: e.target.value })}
+        onChange={(e) =>
+          setProduct({ ...product, description: e.target.value })
+        }
       ></Form.Control>
       <div className="buttonOfAddComp">
         <Button
-          onClick={() => { uptadeProduct(detail.id); window.location.reload(); }}
-          type="submit">Change
+          onClick={() => {
+            uptadeProduct(detail.id);
+            // window.location.reload();
+          }}
+          type="submit"
+        >
+          Change
         </Button>
         {/* <input type="button" value="Refresh" /> */}
         {/* {singleProd && <p>{singleProd.name}</p>} */}
