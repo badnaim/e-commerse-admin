@@ -1,21 +1,21 @@
-export const users = [
-  {
-    userName: "bat",
-    password: "12",
-  },
-  {
-    userName: "bold",
-    password: "123",
-  },
-  {
-    userName: "od",
-    password: "1234",
-  },
-  {
-    userName: "mod",
-    password: "12345",
-  },
-];
+// export const users = [
+//   {
+//     userName: "bat",
+//     password: "12",
+//   },
+//   {
+//     userName: "bold",
+//     password: "123",
+//   },
+//   {
+//     userName: "od",
+//     password: "1234",
+//   },
+//   {
+//     userName: "mod",
+//     password: "12345",
+//   },
+// ];
 
 // export const data = [
 //   {
