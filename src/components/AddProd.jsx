@@ -47,7 +47,7 @@ export default function AddProd({ setRefresh, setShow }) {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    // console.log(newData);
+    console.log(newData);
   }
 
   function addProductHandler(product) {
@@ -78,23 +78,20 @@ export default function AddProd({ setRefresh, setShow }) {
         id="image"
         value={data.image}
         placeholder="image"
-        type="text"
-      ></Form.Control>
+        type="text"></Form.Control>
       <Form.Label>Name</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
         id="name"
         value={data.name}
         placeholder="name"
-        type="text"
-      ></Form.Control>
+        type="text"></Form.Control>
       <Form.Label>Category</Form.Label>
       <Form.Select
         onChange={(e) => handle(e)}
         name="category"
         id="category"
-        value={data.category}
-      >
+        value={data.category}>
         <option disabled={true} value="">
           category
         </option>
@@ -117,8 +114,7 @@ export default function AddProd({ setRefresh, setShow }) {
         id="id"
         value={data.id}
         placeholder="id"
-        type="text"
-      ></Form.Control>
+        type="text"></Form.Control>
       <Form.Label>Price</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
@@ -126,8 +122,7 @@ export default function AddProd({ setRefresh, setShow }) {
         id="price"
         value={data.price}
         placeholder="price"
-        type="number"
-      ></Form.Control>
+        type="number"></Form.Control>
       <Form.Label>Stock</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
@@ -135,8 +130,7 @@ export default function AddProd({ setRefresh, setShow }) {
         id="stock"
         value={data.stock}
         placeholder="stock"
-        type="number"
-      ></Form.Control>
+        type="number"></Form.Control>
       <Form.Label>Sale</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
@@ -144,8 +138,7 @@ export default function AddProd({ setRefresh, setShow }) {
         id="sale"
         value={data.sale}
         placeholder="sale"
-        type="number"
-      ></Form.Control>
+        type="number"></Form.Control>
       <Form.Label>Description</Form.Label>
       <Form.Control
         onChange={(e) => handle(e)}
@@ -153,15 +146,13 @@ export default function AddProd({ setRefresh, setShow }) {
         id="description"
         value={data.description}
         placeholder="description"
-        type="text"
-      ></Form.Control>
+        type="text"></Form.Control>
       <div className="buttonOfAddComp">
         <Button
           onClick={() => {
             addProductHandler(data);
           }}
-          type="submit"
-        >
+          type="submit">
           Submit
         </Button>
       </div>
